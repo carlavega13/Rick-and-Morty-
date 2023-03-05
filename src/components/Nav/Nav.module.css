@@ -1,0 +1,9 @@
+
+.foto{
+    height: 10em;
+    cursor: pointer;
+    margin-left: 1.5em;
+      filter: drop-shadow(0px 0px  15px #018a01);
+    
+
+}
