@@ -34,7 +34,7 @@ const reducer = (state = initialState, action) => {
       return;
 
     //?       ORDER CARDS
-    case FILTER_CARDS:
+    case ORDER_CARDS:
       return;
 
     default:

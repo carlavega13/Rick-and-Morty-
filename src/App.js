@@ -42,6 +42,7 @@ function App() {
   //?    FUNCION ONSEARCH
   const onSearch = function (id) {
     let flag = false;
+    input.value = "";
     characters.forEach((character) => {
       if (character.id.toString() === id) {
         flag = true;

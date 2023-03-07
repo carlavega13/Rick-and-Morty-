@@ -34,6 +34,19 @@ if(!isFav){
      
     return(
         <div>
+            <div>
+                <select name="Order">
+                    <option value="Ascendente" >Ascendente </option>
+                    <option value="Descendente">Descendente</option>
+                </select>
+
+                <select name="Filter">
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Genderless">Genderless</option>
+                    <option value="Unknown">Unknown</option>
+                </select>
+            </div>
           {
             myFavorites.map((character)=>{
                 return(
