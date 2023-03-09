@@ -42,7 +42,7 @@ function App() {
   //?    FUNCION ONSEARCH
   const onSearch = function (id) {
     let flag = false;
-    input.value = "";
+
     characters.forEach((character) => {
       if (character.id.toString() === id) {
         flag = true;
@@ -50,7 +50,9 @@ function App() {
     });
 
     if (!flag) {
-      fetch(`https://rickandmortyapi.com/api/character/${id}`)
+      //!                                      https://rickandmortyapi.com/api/character/${id}
+      console.log(id);
+      fetch(`http://localhost:3001/rickandmorty/characters/${id}`)
         .then((response) => response.json())
         .then((data) => {
           if (data.name) {
