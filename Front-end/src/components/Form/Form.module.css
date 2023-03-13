@@ -1,0 +1,144 @@
+.fondo{
+    height: 100vh;
+    background-color: #252525;
+    display: flex;
+     justify-content: center;
+    align-items: center; 
+    background:url("../../../public/wallhaven-1kkjqv_1920x1080.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.conteinerLog{
+    background:transparent;
+    backdrop-filter: blur(0.5em);
+    border: 2px solid #f1f5f166;
+    display: flex;
+    justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 70vh;
+  width: 40vw;
+  border-radius: 0.5em;
+  box-shadow:0em 0em 4em 1em #09ff01af ;
+  transition: box-shadow 1s,
+
+}
+.conteinerLogError{
+    background:transparent;
+    backdrop-filter: blur(0.5em);
+    border: 2px solid #f1f5f166;
+    display: flex;
+    justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 70vh;
+  width: 40vw;
+  border-radius: 0.5em;
+  box-shadow:0em 0em 4em 1.5em #ff0739d8 ;
+  transition: box-shadow 1s,
+}
+.conteinerInputs{
+
+margin-left: 1.5em;
+}
+.inputSubmit{
+    width: 70%;
+    height: 20%;
+    padding:0.5em 0.5em 0.5em 0.5em;
+    font-size: 1em;
+    margin-left: 0.5em;
+    background: none;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    transition: 1s;
+    
+}
+.inputError{
+    width: 70%;
+    height: 20%;
+    padding:0.5em 0.5em 0.5em 0.5em;
+    font-size: 1em;
+    margin-left: 0.5em;
+    background: none;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+
+    box-shadow:0em 0em 1em 0.1em #ff0739d8 ;
+    border: 1px solid rgba(0, 0, 0, 0.141);
+transition: 1s;
+}
+label{
+    font-size: 2em;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.submit{
+    background: transparent;
+    width: fit-content;
+    left: 30%;
+position: relative;
+text-transform: uppercase;
+font-size: 1.5em;
+letter-spacing: 0.2em;
+font-weight: 400;
+padding: 10px 30px;
+transition: 0.5s;
+
+    
+}
+.submit:hover{
+   letter-spacing: 0.40em;
+   left: 28%;
+   background-color: #09ff016f;
+   box-shadow: 0 0 2.187em #0bff01;
+}
+
+.submitError{
+    background: transparent;
+    width: fit-content;
+    left: 30%;
+position: relative;
+text-transform: uppercase;
+font-size: 1.5em;
+letter-spacing: 0.2em;
+font-weight: 400;
+padding: 10px 30px;
+transition: 0.5s;
+
+    
+}
+.submitError:hover{
+   letter-spacing: 0.40em;
+   left: 28%;
+   background-color: #ff073978 ;
+   box-shadow: 0 0 2.200em #ff0739d8 ;
+}
+ion-icon {
+    font-size: 1.5em;
+  }
+.pError{
+font-size: 1em;
+color:#ff0739d8 ;
+font-family: "Lucida Console", "Courier New", monospace;
+background-color: #6765652c;
+margin-right: 2em;
+padding: 0.5em;
+}
+label{
+    font-family: "Lucida Console", "Courier New", monospace;
+   font-size: 1.9em;
+
+
+}
+
+@media (max-width:800px){
+.conteinerLog{
+    width: 100vw;
+    height: 100vh;
+}
+  }

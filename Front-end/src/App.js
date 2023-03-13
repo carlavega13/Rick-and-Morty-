@@ -50,8 +50,6 @@ function App() {
     });
 
     if (!flag) {
-      //!                                      https://rickandmortyapi.com/api/character/${id}
-      console.log(id);
       fetch(`http://localhost:3001/rickandmorty/characters/${id}`)
         .then((response) => response.json())
         .then((data) => {
@@ -71,7 +69,7 @@ function App() {
   };
 
   return (
-    <>
+    <div className={s.app}>
       <Nav logout={logout} onSearch={onSearch} />
 
       <Routes>
@@ -88,7 +86,7 @@ function App() {
 
         <Route path="/favorites" element={<Favorites />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

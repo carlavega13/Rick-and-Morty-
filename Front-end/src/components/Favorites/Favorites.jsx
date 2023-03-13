@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
-import { addFavorite, deleteFavorite } from "../../redux/actions"
+import { addFavorite, deleteFavorite, orderCards,filterCards } from "../../redux/actions"
 
 
 
@@ -29,18 +29,28 @@ if(!isFav){
      },[isFav])
 
 
-
+//?    HANDLER SELECT CHANGE
+const handlerSelectChange=(event)=>{
+if(event.target.name==="Order"){
+    dispatch(orderCards(event.target.value))
+}
+if(event.target.name==="Filter"){
+    dispatch(filterCards(event.target.value))
+}
+}
 
      
     return(
         <div>
             <div>
-                <select name="Order">
+                <select onChange={handlerSelectChange} name="Order">
+                <option disabled="disable" value="Order" >Order By </option>
                     <option value="Ascendente" >Ascendente </option>
                     <option value="Descendente">Descendente</option>
                 </select>
 
-                <select name="Filter">
+                <select onChange={handlerSelectChange} name="Filter">
+                <option disabled="disable" value="Filter" >Filter By</option>
                     <option value="Female">Female</option>
                     <option value="Male">Male</option>
                     <option value="Genderless">Genderless</option>

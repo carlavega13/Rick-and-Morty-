@@ -8,7 +8,7 @@ import {
 //? ESTADO INICIAL
 const initialState = {
   myFavorites: [],
-  allCharacters: [],
+  allFavoritesCopy: [],
 };
 
 //?      REDUCER
@@ -19,6 +19,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         myFavorites: [...state.myFavorites, action.payload],
+        allFavoritesCopy: [...state.myFavorites, action.payload],
       };
 
     //?         DELETE FAVORITE
@@ -31,12 +32,27 @@ const reducer = (state = initialState, action) => {
       };
     //?        FILTER CARDS
     case FILTER_CARDS:
-      return;
+      return {
+        ...state,
+        myFavorites: state.allFavoritesCopy.filter(
+          (fav) => fav.gender === action.payload
+        ),
+      };
 
     //?       ORDER CARDS
     case ORDER_CARDS:
-      return;
-
+      const sort = state.allFavoritesCopy.sort((a, b) => a.id - b.id);
+      if (action.payload === "Ascendente") {
+        return {
+          ...state,
+          myFavorites: sort,
+        };
+      } else {
+        return {
+          ...state,
+          myFavorites: sort.reverse(),
+        };
+      }
     default:
       return { ...state };
   }
