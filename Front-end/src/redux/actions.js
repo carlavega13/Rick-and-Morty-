@@ -4,12 +4,15 @@ import {
   FILTER_CARDS,
   ORDER_CARDS,
 } from "./actionstype";
+import axios from "axios";
 
 export const addFavorite = (personaje) => {
+  axios.post("http://localhost:3001/rickandmorty/fav", personaje);
   return { type: ADD_FAVORITE, payload: personaje };
 };
 
 export const deleteFavorite = (id) => {
+  axios.delete(`http://localhost:3001/rickandmorty/fav/${id}`);
   return { type: DELETE_FAVORITE, payload: id };
 };
 

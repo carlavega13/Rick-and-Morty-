@@ -16,14 +16,12 @@ export default function Form (props){
         password:""
     })
 
-    //?   USEEFFECT
-    useEffect(()=>{
-validation(userData,setErrors,errors)
-},[userData])
+
 
 //?    HANDLE SUBMIT
 const handleSubmit=(event)=>{
 event.preventDefault()
+   validation(userData,setErrors,errors)
 props.login(userData)
 }
     
@@ -45,7 +43,7 @@ return(
             <div className={s.conteinerInputs}>
             
               <label htmlFor="username">Username </label>
-            {errors.username?<ion-icon  name="mail-outline"></ion-icon>:<ion-icon  name="mail-open-outline"></ion-icon>}
+            {errors.username?<ion-icon  name="mail-open-outline"></ion-icon>:<ion-icon  name="mail-outline"></ion-icon>}
         
               <input className={errors.username?s.inputError:s.inputSubmit} onChange={handleInputChange} name="username" value={userData.username} type="text"/>
             
@@ -54,12 +52,15 @@ return(
           
             <div className={s.conteinerInputs}>
               <label htmlFor="password">Password </label>
-                {errors.password?<ion-icon  name="lock-closed-outline"></ion-icon>:<ion-icon  name="lock-open-outline"></ion-icon>}
+                {errors.password?<ion-icon  name="lock-open-outline"></ion-icon>:<ion-icon  name="lock-closed-outline"></ion-icon>}
               <input className={errors.password?s.inputError:s.inputSubmit} onChange={handleInputChange} value={userData.password} type="password" name="password"/>
               {errors.password&&<p className={s.pError}>{errors.password}</p>}
+
             </div>
-    
-            <button className={errors.password || errors.username? s.submitError:s.submit}>Log in</button>
+              <div className={s.cajaBoton}>
+                  <button className={errors.password || errors.username? s.submitError:s.submit}>Log in</button>
+              </div>
+           
         </form>
     </div>
     </div>

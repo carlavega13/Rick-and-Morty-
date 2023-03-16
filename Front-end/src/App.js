@@ -50,7 +50,7 @@ function App() {
     });
 
     if (!flag) {
-      fetch(`http://localhost:3001/rickandmorty/characters/${id}`)
+      fetch(`http://localhost:3001/rickandmorty/onsearch/${id}`)
         .then((response) => response.json())
         .then((data) => {
           if (data.name) {

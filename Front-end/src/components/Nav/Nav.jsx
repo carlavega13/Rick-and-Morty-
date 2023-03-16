@@ -13,6 +13,9 @@ if(location.pathname!== "/"){
         <Link to="/home">
           <img className={s.foto} src="https://www.freepnglogos.com/uploads/rick-and-morty-png/rick-and-morty-portal-shoes-white-clothing-zavvi-23.png" alt="Not Found" />
           </Link>
+          <Link to="/about">
+          <button>About us</button>
+          </Link>
           <Link to="/favorites">
           <button>Favorites</button>
           </Link>
