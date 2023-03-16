@@ -21,4 +21,4 @@ const postFavorite = (req, res) => {
   }
 };
 
-module.exports = postFavorite;
+// module.exports = postFavorite;

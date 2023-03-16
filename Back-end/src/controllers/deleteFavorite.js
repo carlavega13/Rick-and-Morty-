@@ -7,6 +7,7 @@ const deleteFavorite = (req, res) => {
   let favsFiltered = baseDatos.filter((char) => char.id != id);
   console.log("favs", favsFiltered);
   if (favsFiltered.length !== baseDatos.length) {
+    baseDatos = [];
     baseDatos = favsFiltered;
 
     console.log("base datos", baseDatos);
@@ -17,4 +18,4 @@ const deleteFavorite = (req, res) => {
       .send("The character with that id is not a favorite ");
   }
 };
-module.exports = deleteFavorite;
+// module.exports = deleteFavorite;

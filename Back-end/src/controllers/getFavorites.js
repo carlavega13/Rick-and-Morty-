@@ -5,4 +5,4 @@ const getFavorites = (req, res) => {
   }
   res.status(200).json(baseDatos);
 };
-module.exports = getFavorites;
+// module.exports = getFavorites;
