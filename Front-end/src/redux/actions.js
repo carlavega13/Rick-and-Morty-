@@ -3,6 +3,7 @@ import {
   ADD_FAVORITE,
   FILTER_CARDS,
   ORDER_CARDS,
+  SHOW_SIDE_BAR,
 } from "./actionstype";
 import axios from "axios";
 // !AGREGAR FAVORITO
@@ -25,4 +26,9 @@ export const filterCards = (gender) => {
 // !ORDENAR FAVORITOS
 export const orderCards = (id) => {
   return { type: ORDER_CARDS, payload: id };
+};
+
+// !MOSTRAR SIDE BAR
+export const showSideBar = (boolean) => {
+  return { type: SHOW_SIDE_BAR, payload: boolean };
 };

@@ -2,11 +2,22 @@ import s from "./Nav.module.css"
 import SearchBar from "../SearchBar/SearchBar.jsx"
 import { Link, useLocation } from "react-router-dom"
 import {RxHamburgerMenu} from "react-icons/rx"
-import { useState } from "react"
-
+import { useEffect, useState, } from "react"
+import { useDispatch } from 'react-redux'
+import { showSideBar } from "../../redux/actions"
 
 export default function Nav(props){ 
-  const[imgShown,setImgShown]=useState(false) 
+  //! ESTADO LOCAL PARA LA SIDE BAR
+   const [toggle,setToggle]=useState(false)
+   const dispatch=useDispatch()
+   const handlerToggle=()=>{
+    toggle?setToggle(false):setToggle(true)
+
+   }
+   useEffect(()=>{
+dispatch(showSideBar(toggle))
+   },[toggle])
+
   let location = useLocation();
 if(location.pathname!== "/"){
    return (
@@ -21,7 +32,7 @@ if(location.pathname!== "/"){
           <SearchBar onSearch={props.onSearch}/>  
           <header className={s.burgerBox}>
 
-               <RxHamburgerMenu className={s.burger}/>
+               <RxHamburgerMenu onClick={handlerToggle} className={s.burger}/>
           </header>
        
 

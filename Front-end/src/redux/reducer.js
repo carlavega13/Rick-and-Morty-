@@ -3,12 +3,14 @@ import {
   DELETE_FAVORITE,
   ORDER_CARDS,
   FILTER_CARDS,
+  SHOW_SIDE_BAR,
 } from "./actionstype";
 
 //? ESTADO INICIAL
 const initialState = {
   myFavorites: [],
   allFavoritesCopy: [],
+  sideBar: false,
 };
 
 //?      REDUCER
@@ -54,6 +56,19 @@ const reducer = (state = initialState, action) => {
         };
       }
 
+    //? MOSTRAR SIDE BAR
+    case SHOW_SIDE_BAR:
+      if (action.payload) {
+        return {
+          ...state,
+          sideBar: true,
+        };
+      } else {
+        return {
+          ...state,
+          sideBar: false,
+        };
+      }
     default:
       return { ...state };
   }

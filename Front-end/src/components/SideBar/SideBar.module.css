@@ -1,19 +1,51 @@
+@keyframes rightSlide{
+ from{
+transform: translateX(300%);
+ }
+ to{
+   transform: translateX(0%);
+ }
+}
+@keyframes leftSlide{
+  from{
+ transform: translateX(0%);
+  }
+  to{
+    transform: translateX(300%);
+  }
+ }
        /* !SIDE BAR */
        .sideBar{
          background-color: #252525;
          width: 22%;
          height: 80vh;
-         transition: 1s;
          margin-left: 77.7%;
-position: absolute;
+         position: absolute;
          box-shadow: 0 0.5em 2em 0.1em #008000 ;
          border-radius: 1.5%;
          border:  0.125em solid #85cd85;
          margin-top: 0.5em;
-      
+         transition: 1s;
+         animation: rightSlide 0.5s;
+         
         }
+        .sideBarUnmount{
+          background-color: #252525;
+          width: 22%;
+          height: 80vh;
+          margin-left: 77.7%;
+          position: absolute;
+          box-shadow: 0 0.5em 2em 0.1em #008000 ;
+          border-radius: 1.5%;
+          border:  0.125em solid #85cd85;
+          margin-top: 0.5em;
+          transition: 1s;
+          animation: lefttSlide 0.5s;
+        }
+   
         .sideBar:hover{
         }
+       
            /* !LI  */
    .sideLi{
      font-size: 2em;
@@ -56,14 +88,6 @@ position: absolute;
      100%{
          transform: translateY(0);
      }
-   }
-   @keyframes rightSlide{
-    from{
-transform: translateX(300%);
-    }
-    to{
-      transform: translateX(0%);
-    }
    }
     .logOutimg{
       height: 32.8vh;

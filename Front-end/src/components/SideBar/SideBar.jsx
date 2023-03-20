@@ -1,13 +1,16 @@
 import s from "./SideBar.module.css"
 import fuckyou1 from "./fuckyou1.png"
 import{ Link , useLocation}from "react-router-dom"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import{useSelector} from "react-redux"
 export default function SideBar(){
   const [imgShown,setImgShown]=useState(false)
   let location = useLocation();
-if(location.pathname!== "/"){
+  let {sideBar}= useSelector((state)=>state)
+
+if(location.pathname!== "/"&&sideBar){
   return(
-      <div className={s.sideBar}>
+      <div   className={s.sideBar}>
   <ul className={s.sideUl}>
     <li className={s.sideLi}>
       <Link to="/home">
