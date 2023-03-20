@@ -1,0 +1,112 @@
+       /* !SIDE BAR */
+       .sideBar{
+         background-color: #252525;
+         width: 22%;
+         height: 80vh;
+         transition: 1s;
+         margin-left: 77.7%;
+position: absolute;
+         box-shadow: 0 0.5em 2em 0.1em #008000 ;
+         border-radius: 1.5%;
+         border:  0.125em solid #85cd85;
+         margin-top: 0.5em;
+      
+        }
+        .sideBar:hover{
+        }
+           /* !LI  */
+   .sideLi{
+     font-size: 2em;
+     /* padding-left: 10vw; */
+     padding-bottom:5vh ;
+     display: flex;
+     
+    }
+    .sideUl{
+      display:flex ;
+      flex-direction: column;
+      align-items: start;
+      
+      
+      
+    }
+    .sideA{
+      
+      
+    }
+    a{
+      text-decoration: none;
+    }
+   
+    
+    /* !LOGO DE LA SIDE BAR  */
+    @keyframes bounce{
+     0%{
+         transform: translateY(0);
+     }
+     20%{
+         transform: translateY(-5px);
+     }
+     50%{
+         transform: translateY(0);
+     }
+     80%{
+         transform: translateY(5px);
+     }
+     100%{
+         transform: translateY(0);
+     }
+   }
+   @keyframes rightSlide{
+    from{
+transform: translateX(300%);
+    }
+    to{
+      transform: translateX(0%);
+    }
+   }
+    .logOutimg{
+      height: 32.8vh;
+      width: 20vw;
+      transition: 1s;
+      position: relative;
+      right: 20%;
+      filter: drop-shadow(0px 0px  15px #0bff01);
+      animation: bounce 1s 0s infinite linear,
+     rightSlide 1s;
+    }
+    
+    /* !BOTTON LOG OUT */
+    .logOut{
+      height: 45%;
+      font-size: 1.5rem;
+      margin: 1.5rem;
+      background-color: #252525;
+      border: #09ff017f 0.125em solid;
+      padding: 0.125em 1em;
+      letter-spacing:0.20em;
+      font-weight: 300;
+      cursor: pointer;
+      color: #09ff01ca;
+      border-radius: 0.25em;
+      text-shadow:
+      0 0 0.5em currentColor,
+     0 0 0.05em whitesmoke;
+     box-shadow: 
+     inset 0 0 0.3em 0 #0bff01,
+     0 0 0.5em 0 #0bff01 ;
+    position: relative;
+     transition: background-color 300ms linear,
+     1s;
+    }
+    
+   
+    .logOut:hover{
+        background-color: #09ff0184;
+        color: #252525;
+    box-shadow:
+    inset 0 0 2.4em 0.1em #0bff01,
+    0 0 2.4em 0.1em #0bff01 ;
+       
+    }
+   

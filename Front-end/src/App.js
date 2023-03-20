@@ -7,6 +7,7 @@ import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
 import Form from "./components/Form/Form";
 import Favorites from "./components/Favorites/Favorites";
+import SideBar from "./components/SideBar/SideBar";
 
 function App() {
   //?   ESTADO LOCAL
@@ -71,7 +72,7 @@ function App() {
   return (
     <div className={s.app}>
       <Nav logout={logout} onSearch={onSearch} />
-
+      <SideBar className={s.sideBar} />
       <Routes>
         <Route path="/" element={<Form login={login} />} />
 

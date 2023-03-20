@@ -53,6 +53,7 @@ const reducer = (state = initialState, action) => {
           myFavorites: sort.reverse(),
         };
       }
+
     default:
       return { ...state };
   }

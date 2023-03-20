@@ -1,4 +1,3 @@
-// let baseDatos = [3];
 let baseDatos = require("../utils/fav");
 //!     POST FAVORITE
 const postFavorite = (req, res) => {

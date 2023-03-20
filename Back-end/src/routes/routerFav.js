@@ -8,7 +8,5 @@ const {
   postFavorite,
   deleteFavorite,
 } = require("../controllers/FavsControllers");
-routerFav.get("/", getFavorites);
-routerFav.post("/", postFavorite);
 routerFav.delete("/:id", deleteFavorite);
 module.exports = routerFav;

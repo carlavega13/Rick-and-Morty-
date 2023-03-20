@@ -1,15 +1,32 @@
+     /* !MEDIA QUERY  */
+     @media (max-width:800px){
+      input{
+      width: 30%;
+      height: 50%;
+     }
+      
+      .butonSearch{
+       width: 30%;
+       
+       
+      }
 
-.buscadorCaja{
-display: flex;
-align-items: center;
-}
-/*?              INPUT               ?*/
+     }
 
-.inputSearch{
-border-radius: 0.25em;
-padding: 0.125em 1em;
-border: #0bff01 0.125em solid;
-font-size: 1.5rem;
+     /* !CAJA CONTENEDORA DE TODO  */
+     .principalBox{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+     }
+
+        /* !INPUT  */
+    .inputSearch{
+        border-radius: 0.25em;
+        /* border-radius: 7%; */
+        border: #0bff01 0.125em solid;
+        font-size: 1.5rem;
 letter-spacing: 0.20em;
 background-color: #252525;
 box-shadow: 
@@ -17,62 +34,165 @@ inset 0 0 0.3em 0 #0bff01,
 0 0 0.5em 0 #0bff01 ;
 
 transition: box-shadow 300ms linear;
-
-} 
-
-.inputSearch:hover{
-   box-shadow:  
+    }
+    .inputSearch:hover{
+        box-shadow:  
+         inset 0 0 0.3em 0 #0bff01,
+     0 0 1em 0 #0bff01 ;
+     
+     }
+      /* !BUTTON SEARCH */
+      .butonSearch{
+      height: 45%;
+   font-size: 1.5rem;
+   margin: 1.5rem;
+   background-color: #252525;
+   border: #0bff01 0.125em solid;
+   padding: 0.125em 1em;
+   letter-spacing:0.20em;
+   font-weight: 300;
+   cursor: pointer;
+   color: #0bff01;
+   border-radius: 0.25em;
+   text-shadow:
+    0 0 0.5em currentColor,
+    0 0 0.05em whitesmoke;
+    box-shadow: 
     inset 0 0 0.3em 0 #0bff01,
-0 0 1em 0 #0bff01 ;
-
-}
-/*?                 BOTON                **/
-.butonSearch{
-     /* display: flex; */
-font-size: 1.5rem;
-margin: 1.5rem;
-background-color: #252525;
-border: #0bff01 0.125em solid;
-padding: 0.125em 1em;
-letter-spacing:0.20em;
-font-weight: 300;
-cursor: pointer;
-color: #0bff01;
-border-radius: 0.25em;
-text-shadow:
- 0 0 0.5em currentColor,
- 0 0 0.05em whitesmoke;
- box-shadow: 
- inset 0 0 0.3em 0 #0bff01,
- 0 0 0.5em 0 #0bff01 ;
-position: relative;
- transition: background-color 300ms linear;
-}
-
-.butonSearch:hover::after{
-    opacity: 0.3;
-
-
- 
-}
-.butonSearch:hover{
-    background-color: #0bff01;
-    color: #252525;
-
+    0 0 0.5em 0 #0bff01 ;
+   position: relative;
+    transition: background-color 300ms linear;
+   }
    
-}
-.butonSearch::after{
-    pointer-events: none;
-    content: " ";
-    position: absolute;
-    background:#0bff01 ;
-    top: 120%;
-    left:0;
-    width: 100%;
-    height: 100%;
-    transform: perspective(1em)rotateX(40deg)  scale(1, 0.50);
-    opacity: 0;
-    filter: blur(1em);
+   .butonSearch:hover::after{
+       opacity: 0.3;
+   
+   
+    
+   }
+   .butonSearch:hover{
+       background-color: #0bff01;
+       color: #252525;
+   
+      
+   }
+   .butonSearch::after{
+       pointer-events: none;
+       content: " ";
+       position: absolute;
+       background:#0bff01 ;
+       top: 120%;
+       left:0;
+       width: 100%;
+       height: 100%;
+       transform: perspective(1em)rotateX(40deg)  scale(1, 0.50);
+       opacity: 0;
+       filter: blur(1em);
+   
+   transition: opacity 300ms linear;
+   }
 
-transition: opacity 300ms linear;
-}
+     /* !BOTON ADD RANDOM */
+     .addRandom{
+        height: 45%;
+     font-size: 1rem;
+     
+     background-color: #252525;
+     border: #0bff01 0.125em solid;
+     padding: 0.125em 1em;
+     letter-spacing:0.20em;
+     font-weight: 300;
+     cursor: pointer;
+     color: #0bff01;
+     border-radius: 0.25em;
+     text-shadow:
+      0 0 0.5em currentColor,
+      0 0 0.05em whitesmoke;
+      box-shadow: 
+      inset 0 0 0.3em 0 #0bff01,
+      0 0 0.5em 0 #0bff01 ;
+     position: relative;
+      transition: background-color 300ms linear;
+     }
+     
+     .addRandom:hover::after{
+         opacity: 0.3;
+     
+     
+      
+     }
+     .addRandom:hover{
+         background-color: #0bff01;
+         color: #252525;
+     
+        
+     }
+     .addRandom::after{
+         pointer-events: none;
+         content: " ";
+         position: absolute;
+         background:#0bff01 ;
+         top: 120%;
+         left:0;
+         width: 100%;
+         height: 100%;
+         transform: perspective(1em)rotateX(40deg)  scale(1, 0.50);
+         opacity: 0;
+         filter: blur(1em);
+     
+     transition: opacity 300ms linear;
+     }
+
+      /* !BOTON CLOSE ALL */
+      .closeAll{
+        height: 45%;
+     font-size: 1rem;
+     margin: 1.5rem;
+     background-color: #252525;
+     border: #0bff01 0.125em solid;
+     padding: 0.125em 1em;
+     letter-spacing:0.20em;
+     font-weight: 300;
+     cursor: pointer;
+     color: #0bff01;
+     border-radius: 0.25em;
+     text-shadow:
+      0 0 0.5em currentColor,
+      0 0 0.05em whitesmoke;
+      box-shadow: 
+      inset 0 0 0.3em 0 #0bff01,
+      0 0 0.5em 0 #0bff01 ;
+     position: relative;
+      transition: background-color 300ms linear;
+     }
+     
+     .closeAll:hover::after{
+         opacity: 0.3;
+     
+     
+      
+     }
+     .closeAll:hover{
+         background-color: #0bff01;
+         color: #252525;
+     
+        
+     }
+     .closeAll::after{
+         pointer-events: none;
+         content: " ";
+         position: absolute;
+         background:#0bff01 ;
+         top: 120%;
+         left:0;
+         width: 100%;
+         height: 100%;
+         transform: perspective(1em)rotateX(40deg)  scale(1, 0.50);
+         opacity: 0;
+         filter: blur(1em);
+     
+     transition: opacity 300ms linear;
+     }
+
+
+     
