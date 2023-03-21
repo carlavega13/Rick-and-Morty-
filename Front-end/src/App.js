@@ -8,10 +8,13 @@ import Detail from "./components/Detail/Detail";
 import Form from "./components/Form/Form";
 import Favorites from "./components/Favorites/Favorites";
 import SideBar from "./components/SideBar/SideBar";
+import { useDispatch, useSelector } from "react-redux";
+import { addCharacter } from "./redux/actions";
 
 function App() {
-  //?   ESTADO LOCAL
-  const [characters, setCharacters] = useState([]);
+  //?  ESTADO GLOBAL
+  const charactersGlobal = useSelector((state) => state.characters);
+  const dispatch = useDispatch();
 
   //? CONSTANTES DE LOGIN
   const [access, setAccess] = useState(false);
@@ -44,7 +47,7 @@ function App() {
   const onSearch = function (id) {
     let flag = false;
 
-    characters.forEach((character) => {
+    charactersGlobal.forEach((character) => {
       if (character.id.toString() === id) {
         flag = true;
       }
@@ -55,18 +58,13 @@ function App() {
         .then((response) => response.json())
         .then((data) => {
           if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
+            dispatch(addCharacter(data));
           } else {
             window.alert("No hay personajes con ese ID");
           }
         });
     }
     input.value = "";
-  };
-
-  //?  FUNCION ONCLOSE
-  const onClose = (id) => {
-    setCharacters(characters.filter((character) => character.id !== id));
   };
 
   return (
@@ -76,10 +74,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Form login={login} />} />
 
-        <Route
-          path="/home"
-          element={<Cards onClose={onClose} characters={characters} />}
-        />
+        <Route path="/home" element={<Cards />} />
 
         <Route path="/about" element={<About />} />
 

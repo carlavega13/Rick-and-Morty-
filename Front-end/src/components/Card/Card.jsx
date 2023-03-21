@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import {addFavorite,deleteFavorite}from "../../redux/actions.js"
+import {addFavorite,deleteFavorite,deleteCharacter}from "../../redux/actions.js"
 
 export default function Card(props) {
 //?       DISPATCH
@@ -27,7 +27,11 @@ if(myFavorites[i].id === props.id){
 }, [myFavorites]);
 
 
- 
+ //? HANDLE CLOSE
+ const {characters}=useSelector(state=>state)
+ const handleClose=(id)=>{
+dispatch(deleteCharacter(id))
+ }
 
 //?       HANLDE FAVORITE
 const handleFavorite=()=>{
@@ -50,7 +54,7 @@ const handleFavorite=()=>{
       <button onClick={handleFavorite}>🤍</button>
    )
  }
-         <button onClick={()=>props.onClose(props.id)} >X</button>
+         <button onClick={()=>handleClose(props.id)} >X</button>
           <Link to={`/detail/${props.id}`}>
          <h1>{props.name}</h1>
          </Link>

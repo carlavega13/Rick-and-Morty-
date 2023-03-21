@@ -12,10 +12,10 @@ const getCharById = (req, res) => {
         image: response.data.image,
         gender: response.data.gender,
       };
-      return res.status("200").json(character);
+      return res.status(200).json(character);
     },
     (err) => {
-      return res.status("500").send(err.message);
+      return res.status(500).send(err.message);
     }
   );
 };

@@ -14,10 +14,10 @@ const getCharDetail = (req, res) => {
         origin: response.data.origin?.name,
         status: response.data.status,
       };
-      return res.status("200").json(character);
+      return res.status(200).json(character);
     },
     (err) => {
-      return res.status("500").send(err.message);
+      return res.status(500).send(err.message);
     }
   );
 };

@@ -1,9 +1,11 @@
+import { useSelector } from 'react-redux';
 import Card from '../Card/Card.jsx';
 import s from "./Cards.module.css"
 
 export default function Cards(props) {
    
-  const {characters}=props
+
+  const {characters}=useSelector((state)=>state)
 
 
   return <div className={s.Cards}>

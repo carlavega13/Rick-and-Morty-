@@ -4,6 +4,9 @@ import {
   FILTER_CARDS,
   ORDER_CARDS,
   SHOW_SIDE_BAR,
+  ADD_CHARACTER,
+  DELETE_ALL,
+  DELETE_CHARACTER,
 } from "./actionstype";
 import axios from "axios";
 // !AGREGAR FAVORITO
@@ -31,4 +34,19 @@ export const orderCards = (id) => {
 // !MOSTRAR SIDE BAR
 export const showSideBar = (boolean) => {
   return { type: SHOW_SIDE_BAR, payload: boolean };
+};
+
+//! ADD CHARACTER
+export const addCharacter = (character) => {
+  return { type: ADD_CHARACTER, payload: character };
+};
+
+//! DELETE CHARACTER
+export const deleteCharacter = (id) => {
+  return { type: DELETE_CHARACTER, payload: id };
+};
+
+//! DELETE ALL
+export const delelteAll = () => {
+  return { type: DELETE_ALL };
 };

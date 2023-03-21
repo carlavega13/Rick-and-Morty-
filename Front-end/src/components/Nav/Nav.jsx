@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom"
 import {RxHamburgerMenu} from "react-icons/rx"
 import { useEffect, useState, } from "react"
 import { useDispatch } from 'react-redux'
-import { showSideBar } from "../../redux/actions"
+import { delelteAll, showSideBar } from "../../redux/actions"
 
 export default function Nav(props){ 
   //! ESTADO LOCAL PARA LA SIDE BAR
@@ -14,6 +14,7 @@ export default function Nav(props){
     toggle?setToggle(false):setToggle(true)
 
    }
+
    useEffect(()=>{
 dispatch(showSideBar(toggle))
    },[toggle])

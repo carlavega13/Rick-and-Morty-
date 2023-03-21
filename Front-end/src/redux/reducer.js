@@ -4,6 +4,9 @@ import {
   ORDER_CARDS,
   FILTER_CARDS,
   SHOW_SIDE_BAR,
+  ADD_CHARACTER,
+  DELETE_ALL,
+  DELETE_CHARACTER,
 } from "./actionstype";
 
 //? ESTADO INICIAL
@@ -11,6 +14,7 @@ const initialState = {
   myFavorites: [],
   allFavoritesCopy: [],
   sideBar: false,
+  characters: [],
 };
 
 //?      REDUCER
@@ -69,6 +73,25 @@ const reducer = (state = initialState, action) => {
           sideBar: false,
         };
       }
+    //? ADD CHARACTER
+    case ADD_CHARACTER:
+      return {
+        ...state,
+        characters: [...state.characters, action.payload],
+      };
+    //? DELETE CHARACTER
+    case DELETE_CHARACTER:
+      return {
+        ...state,
+        characters: state.characters.filter(
+          (char) => char.id !== action.payload
+        ),
+      };
+    case DELETE_ALL:
+      return {
+        ...state,
+        characters: [],
+      };
     default:
       return { ...state };
   }

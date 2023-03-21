@@ -17,7 +17,7 @@ const postFavorite = (req, res) => {
     baseDatos.push(character);
     res.status(201).send(baseDatos);
   } else {
-    res.status("404").send("Cant create, must complete every input");
+    res.status(404).send("Cant create, must complete every input");
   }
 };
 
